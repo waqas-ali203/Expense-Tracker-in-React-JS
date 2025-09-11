@@ -1,12 +1,19 @@
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 
-
-function App() {
-
+const App = () => {
   return (
-   <div>
-    <h1>Expense Tracker App</h1>
-   </div>
-  )
-}
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
 
-export default App
+export default App;
